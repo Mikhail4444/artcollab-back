@@ -11,6 +11,9 @@ import uuid
 def main(request):
     return JsonResponse({"message": "Hello World"})
 
+def generate(request):
+    return JsonResponse({"message": "Answer"})
+
 def get_prompt(request):
     prompt = request.GET.get('prompt', '')
     with  GigaChat(credentials=settings.GIGACHAT_API_KEY, verify_ssl_certs=False) as giga:
